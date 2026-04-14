@@ -44,7 +44,6 @@
     height: 90vh; 
     width: 70vh;
     background-color: rgba(138, 96, 253, 0.089); 
-    /* border: 2px solid rgba(44, 140, 218, 0.301); */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     backdrop-filter: blur(16px);
@@ -64,15 +63,14 @@
     animation: titleGlow 4s infinite ease-in-out;
 }
 .social-icon img, .social-icon i {
-    color: #ffffff; /* Если это иконочный шрифт (FontAwesome) */
-    filter: brightness(0) invert(1) opacity(0.8); /* Если это SVG/PNG картинка */
-    transition: all 0.3s ease; /* Для плавного перехода */
+    color: #ffffff; 
+    filter: brightness(0) invert(1) opacity(0.8); 
+    transition: all 0.3s ease; 
     margin-top: 20px;
     height: 50px; 
     margin-right: 2px;
 }
 
-/* Эффект при наведении (hover) */
 .link-card:hover .social-icon img, 
 .link-card:hover i {
     filter: brightness(0) invert(1) opacity(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
@@ -85,7 +83,6 @@
     flex-direction: column;
 }
 
-/* Стили кнопок-ссылок */
 .link-card {
     display: flex;
     align-items: center;
@@ -170,4 +167,67 @@
     0% { text-shadow: 0 0 10px rgba(242, 231, 255, 0.2); }
     50% { text-shadow: 0 0 20px rgba(242, 231, 255, 0.6), 0 0 30px rgba(138, 96, 253, 0.4); }
     100% { text-shadow: 0 0 10px rgba(242, 231, 255, 0.2); }
+}
+
+/* mobile support */
+@media (max-width: 480px) {
+    
+    .main-figure {
+        width: 90vw; 
+        height: auto; 
+        min-height: 70vh;
+        padding: 30px 15px; 
+    }
+
+    
+    .main-heading {
+        font-size: 45px; 
+        margin-bottom: 20px;
+    }
+
+    .link-text {
+        font-size: 24px; 
+    }
+
+    
+    .links-container {
+        width: 100%; 
+        gap: 15px;
+        max-height: 50vh; 
+        overflow-y: auto;
+        padding-right: 5px; 
+        -webkit-overflow-scrolling: touch;
+        mask-image: linear-gradient(to bottom, 
+        transparent, 
+        black 10%, 
+        black 90%, 
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(to bottom, 
+        transparent, 
+        black 10%, 
+        black 90%, 
+        transparent
+    );
+    }
+    .links-container::-webkit-scrollbar {
+        width: 4px;
+    }
+    .links-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    }
+    .link-card {
+        padding: 12px;
+    }
+
+    .social-icon img {
+        height: 30px; 
+    }
+
+   
+    .footer-content {
+        font-size: 8px; 
+        bottom: 10px;
+    }
 }
